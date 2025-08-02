@@ -1,4 +1,4 @@
-package my.nfc.tag
+package com.my.nfc.demo
 
 import org.junit.Test
 

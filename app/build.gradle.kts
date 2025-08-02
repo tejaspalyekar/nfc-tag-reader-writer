@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "my.nfc.tag"
+    namespace = "com.my.nfc.demo"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "my.nfc.tag"
+        applicationId = "com.my.nfc.demo"
         minSdk = 24
         targetSdk = 35
         versionCode = 1
