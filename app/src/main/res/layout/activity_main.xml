@@ -11,7 +11,7 @@
         android:id="@+id/linearLayout"
         style="?android:attr/buttonBarStyle"
         android:layout_width="412dp"
-        android:layout_height="75dp"
+        android:layout_height="92dp"
         android:gravity="center"
         android:orientation="horizontal"
         android:padding="@dimen/margin_10"
@@ -22,31 +22,28 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView"
         app:layout_constraintVertical_bias="1.0">
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/read_btn"
-            style="@style/Widget.AppCompat.Button"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="61dp"
             android:layout_weight="1"
-            android:background="@color/primary"
             android:text="@string/read_data"
             android:textColor="@color/white"
-            app:cornerRadius="50dp" />
+            app:backgroundTint="@color/red_color"
+            app:cornerRadius="20dp"
+            app:rippleColor="@color/white" />
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/write_btn"
-            style="@style/Widget.AppCompat.Button"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin_10"
+            android:layout_height="62dp"
+            android:layout_marginStart="10dp"
             android:layout_weight="1"
-            android:background="@color/primary"
-            android:backgroundTint="@color/primary"
-            android:backgroundTintMode="screen"
             android:text="@string/write_data"
             android:textColor="@color/white"
-            android:textColorLink="@color/white"
-            app:cornerRadius="50dp" />
+            app:backgroundTint="@color/green_color"
+            app:cornerRadius="20dp"
+            app:rippleColor="@color/white" />
 
     </LinearLayout>
 
@@ -82,5 +79,6 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/materialToolbar2" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
