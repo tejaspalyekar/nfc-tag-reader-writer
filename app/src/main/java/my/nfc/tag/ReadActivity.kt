@@ -56,7 +56,7 @@ class ReadActivity : AppCompatActivity() {
     @SuppressLint("SetTextI18n")
     override fun onNewIntent(intent: Intent) {
         super.onNewIntent(intent)
-        if (NfcAdapter.ACTION_NDEF_DISCOVERED == intent.action || NfcAdapter.ACTION_TECH_DISCOVERED == intent.action) {
+        if (NfcAdapter.ACTION_NDEF_DISCOVERED == intent.action || NfcAdapter.ACTION_TECH_DISCOVERED == intent.action ||  NfcAdapter.ACTION_TAG_DISCOVERED == intent.action) {
             dataTxt.text = "NFC Tag Detected..Loading data...";
             val tag = intent.getParcelableExtra<Tag>(NfcAdapter.EXTRA_TAG) ?: return
             val ndef = Ndef.get(tag) ?: return
