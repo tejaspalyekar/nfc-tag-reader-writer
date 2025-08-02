@@ -38,7 +38,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Upload Release Assets
         uses: softprops/action-gh-release@v1
-        with: |
+        with:
+         files: |
           app/build/outputs/apk/debug/*.apk
           app/build/outputs/apk/release/*.apk
         env:
