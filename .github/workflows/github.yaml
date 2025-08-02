@@ -8,40 +8,47 @@ on:
     branches:
       - master
       - main
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
       - name: Set up JDK
         uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
           java-version: '17'
+
       - name: Set execution flag for gradlew
         run: chmod +x ./gradlew
+
+      - name: Create Tag
+        id: tag_version
+        uses: mathieudutour/github-tag-action@v6.1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          tag_prefix: "v"
+
       - name: Build with Gradle
-        run: ./gradlew build
+        run: ./gradlew assembleDebug assembleRelease
+
       - name: Upload build artifacts
         uses: actions/upload-artifact@v4
         with:
           name: android-build
           path: app/build/outputs/apk/**/*.apk
-      - name: Create Release
-        uses: softprops/action-gh-release@v1
-        with:
-          tag_name: v1.0.0
-          name: "Release v1.0.0"
-          body: "Automated build from GitHub Actions"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Upload Release Assets
-        uses: softprops/action-gh-release@v1
-        with:
-         files: |
-          app/build/outputs/apk/debug/*.apk
-          app/build/outputs/apk/release/*.apk
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Create Release and Upload APKs
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ steps.tag_version.outputs.new_tag }}
+          name: "Release ${{ steps.tag_version.outputs.new_tag }}"
+          body: "Automated build from GitHub Actions"
+          files: |
+            app/build/outputs/apk/debug/*.apk
+            app/build/outputs/apk/release/*.apk
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
