@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Nfc tool</string>
+    <string name="app_name">Nfc Tool</string>
     <string name="read_data">Read Data</string>
     <string name="write_data">Write Data</string>
     <string name="app_logo">App Logo</string>
