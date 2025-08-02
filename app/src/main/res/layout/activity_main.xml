@@ -59,10 +59,11 @@
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/materialToolbar2"
-        android:layout_width="409dp"
-        android:layout_height="wrap_content"
+        android:layout_width="414dp"
+        android:layout_height="90dp"
         android:background="@color/primary"
         android:minHeight="?attr/actionBarSize"
+        android:paddingTop="@dimen/top_margin"
         android:theme="?attr/actionBarTheme"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

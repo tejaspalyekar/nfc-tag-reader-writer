@@ -9,14 +9,15 @@
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/materialToolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="417dp"
+        android:layout_height="92dp"
         android:background="@color/primary"
         android:minHeight="?attr/actionBarSize"
+        android:paddingTop="@dimen/top_margin"
         android:theme="?attr/actionBarTheme"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:title="@string/read_data"
         app:titleCentered="true"
         app:titleTextColor="@color/white" />
